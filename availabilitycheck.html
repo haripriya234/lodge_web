@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lodge Booking</title>
+</head>
+<body>
+    <h1>Lodge Booking</h1>
+    <label for="check-in-date">Check-In Date:</label>
+    <input type="date" id="check-in-date">
+    <br>
+    <label for="check-out-date">Check-Out Date:</label>
+    <input type="date" id="check-out-date">
+    <br>
+    <button id="check-availability-button">Check Availability</button>
+    <p id="availability-result"></p>
+
+    <script>
+        document.getElementById("check-availability-button").addEventListener("click", function() {
+            const checkInDate = document.getElementById("check-in-date").value;
+            const checkOutDate = document.getElementById("check-out-date").value;
+
+            // Send a request to the server to check availability
+            fetch("check_availability.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `checkInDate=${checkInDate}&checkOutDate=${checkOutDate}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("availability-result").textContent = `Rooms available: ${data.availableRooms}`;
+            })
+            .catch(error => {
+                console.error("Error checking availability:", error);
+            });
+        });
+    </script>
+</body>
+</html>
+

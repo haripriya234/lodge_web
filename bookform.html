@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Form</title>
+    <style>
+        .navbar {
+  overflow: hidden;
+  background-color: yellowgreen; /* You can choose any color you prefer */
+}
+  .madhu{
+    font-size: 160%;
+    float: left;
+    font-style: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+/* Style the navigation bar links */
+.navbar a {
+  float:right;
+  display: block;
+  color: white;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 0.5%;
+  font-size: 100%;
+}
+
+/* Change the color of the navigation bar links when you hover over them */
+.navbar a:hover {
+  background-color: grey; /* You can choose any color you prefer */
+  color: white;
+}
+.form {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            height: 40px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+</style>
+</head>
+<body>
+    
+<div class="navbar">
+    <div class="madhu">
+      <a href="#madhushini">MADHUSHINI</a>
+    </div>
+    <a href="contact.html">CONTACT</a>
+    <a href="test.html">TESTIMONIALS</a>
+    <a href="photogallery.html">PHOTOGALLERY</a>
+    <a href="amen.html">AMENITIES AND FACILITIES</a>
+    <a href="acc.html">ACCOMOODATIONS</a>
+    <a href="home.html">HOME</a>
+  </div>
+    <div class = "form"> 
+    <h1>Room Booking Form</h1>        
+    <form action="processbook.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="check-in-date">Check-In Date:</label>
+        <input type="date" id="check-in-date" name="check-in-date" required>
+        <br>
+        <label for="departure-date">Departure Date:</label>
+        <input type="date" id="departure-date" name="departure-date" required>
+        <br>
+        <label for="room-type">Room Type:</label>
+        <select id="room-type" name="room-type" required>
+            <option value="Standard">Standard</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Suite">Suite</option>
+        </select>
+        <br>
+        <input type="submit" value="Book Now">
+    </form>
+    </div>
+
+</body>
+</html>
+
