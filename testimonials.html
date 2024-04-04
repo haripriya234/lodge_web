@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Style the navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: yellowgreen; /* You can choose any color you prefer */
+}
+  .madhu{
+    font-size: 160%;
+    float: left;
+    font-style: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+/* Style the navigation bar links */
+.navbar a {
+  float:right;
+  display: block;
+  color: white;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 0.5%;
+  font-size: 100%;
+}
+
+/* Change the color of the navigation bar links when you hover over them */
+.navbar a:hover {
+  background-color: grey; /* You can choose any color you prefer */
+  color: white;
+}
+/* Testimonial box styles */
+.testimonial {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.testimonial:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+.testimonial span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Testimonial form styles */
+.submit-testimonial {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.submit-testimonial:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.submit-testimonial label,
+.submit-testimonial textarea {
+    display: block;
+    margin: 10px 0;
+}
+
+.submit-testimonial button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.submit-testimonial button:hover {
+    background-color: #555;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="madhu">
+    <a href="#madhushini">MADHUSHINI</a>
+  </div>
+  <a href="contact.html">CONTACT</a>
+  <a href="test.html">TESTIMONIALS</a>
+  <a href="photogallery.html">PHOTOGALLERY</a>
+  <a href="amen.html">AMENITIES AND FACILITIES</a>
+  <a href="acc.html">ACCOMEDATIONS</a>
+  <a href="home.html">HOME</a>
+</div>
+
+<section class="testimonials">
+    <div class="testimonial">
+        <p>"We had a wonderful stay at MADHUSHINI. The environment and the atmosphere helped us to relax. We had a very good stay."</p>
+        <span>RADHA</span>
+    </div>
+</section>
+
+<section class="submit-testimonial">
+    <h2>Submit Your Testimonial</h2>
+    <form id="testimonial-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="testimonial-text">Testimonial:</label>
+        <textarea id="testimonial-text" name="testimonial-text" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("testimonial-form");
+    const testimonialsSection = document.querySelector(".testimonials");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const testimonialText = document.getElementById("testimonial-text").value;
+
+        const newTestimonial = document.createElement("div");
+        newTestimonial.className = "testimonial";
+
+        newTestimonial.innerHTML = `
+            <img src="default-avatar.jpg" alt="${name}">
+            <p>${testimonialText}</p>
+            <span>${name}</span>
+        `;
+
+        testimonialsSection.appendChild(newTestimonial);
+
+        // Clear the form fields
+        form.reset();
+    });
+});
+
+</script>
+
+</body>
+</html>
